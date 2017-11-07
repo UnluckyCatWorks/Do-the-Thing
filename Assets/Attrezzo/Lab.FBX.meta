@@ -53,6 +53,16 @@ ModelImporter:
     100090: Tubo ventilacion recto
     100092: Tubos triple
     100094: viga y pared001
+    100096: Estanterias001
+    100098: Estanterias002
+    100100: Estanterias003
+    100102: Estanterias004
+    100104: Estanterias005
+    100106: Estanterias006
+    100108: Estanterias007
+    100110: Estanterias008
+    100112: Line024
+    100114: Pizarra
     400000: Box001
     400002: Box002
     400004: Box003
@@ -101,6 +111,16 @@ ModelImporter:
     400090: Tubo ventilacion recto
     400092: Tubos triple
     400094: viga y pared001
+    400096: Estanterias001
+    400098: Estanterias002
+    400100: Estanterias003
+    400102: Estanterias004
+    400104: Estanterias005
+    400106: Estanterias006
+    400108: Estanterias007
+    400110: Estanterias008
+    400112: Line024
+    400114: Pizarra
     2300000: Box001
     2300002: Box002
     2300004: Box003
@@ -148,6 +168,16 @@ ModelImporter:
     2300088: Tubo ventilacion recto
     2300090: Tubos triple
     2300092: viga y pared001
+    2300094: Estanterias001
+    2300096: Estanterias002
+    2300098: Estanterias003
+    2300100: Estanterias004
+    2300102: Estanterias005
+    2300104: Estanterias006
+    2300106: Estanterias007
+    2300108: Estanterias008
+    2300110: Line024
+    2300112: Pizarra
     3300000: Box001
     3300002: Box002
     3300004: Box003
@@ -195,6 +225,16 @@ ModelImporter:
     3300088: Tubo ventilacion recto
     3300090: Tubos triple
     3300092: viga y pared001
+    3300094: Estanterias001
+    3300096: Estanterias002
+    3300098: Estanterias003
+    3300100: Estanterias004
+    3300102: Estanterias005
+    3300104: Estanterias006
+    3300106: Estanterias007
+    3300108: Estanterias008
+    3300110: Line024
+    3300112: Pizarra
     4300000: Box001
     4300002: Box002
     4300004: Box003
@@ -242,6 +282,16 @@ ModelImporter:
     4300088: viga y pared001
     4300090: Tuberia 2
     4300092: Tuberia 1
+    4300094: Pizarra
+    4300096: Estanterias001
+    4300098: Estanterias002
+    4300100: Estanterias003
+    4300102: Estanterias004
+    4300104: Estanterias005
+    4300106: Estanterias006
+    4300108: Estanterias007
+    4300110: Estanterias008
+    4300112: Line024
     6400000: Box001
     6400002: Box002
     6400004: Box003
@@ -289,6 +339,16 @@ ModelImporter:
     6400088: Tubo ventilacion recto
     6400090: Tubos triple
     6400092: viga y pared001
+    6400094: Estanterias001
+    6400096: Estanterias002
+    6400098: Estanterias003
+    6400100: Estanterias004
+    6400102: Estanterias005
+    6400104: Estanterias006
+    6400106: Estanterias007
+    6400108: Estanterias008
+    6400110: Line024
+    6400112: Pizarra
     9500000: //RootNode
   materials:
     importMaterials: 1
