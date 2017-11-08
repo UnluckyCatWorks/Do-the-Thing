@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Grabbable : MonoBehaviour
 {
+	public Ingredients ingredientType;
 	public static Grabbable current;	
 	Rigidbody body;
 	bool colliding;
