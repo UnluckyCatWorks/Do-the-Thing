@@ -4,25 +4,26 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+	#region INTERNAL DATA
+	public static Material outlineMat;
+	public static Transform grabPoint;
+
 	public LayerMask ignoredByGrabbed;
-	public float charSpeed;
-	public float rotSpeed;
-	public float maxAngle;
-
-	Grabbable grabbedObject;
-	float movSpeed;
-
-	[HideInInspector]
-	public Transform grabPoint;
 	CharacterController me;
 	Transform cam;
+
+	public float charSpeed;
+	float movSpeed;
+
+	public float rotSpeed;
+	public float maxAngle; 
+	#endregion
 
 	private void Update () 
 	{
 		Crouch ();
 		Movement ();
 		Rotation ();
-		CollisionCheck ();
 		Raycasting ();
 
 		#region UNREAL JEJE
@@ -34,37 +35,34 @@ public class Player : MonoBehaviour
 	}
 	private void Awake() 
 	{
-		cam = Camera.main.transform;
-		me = GetComponent<CharacterController> ();
-		grabPoint = Camera.main.transform.GetChild (0);
 		// Don't show cursor
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
+		// Setup refernces
+		grabPoint = Camera.main.transform.GetChild (0);
+		me = GetComponent<CharacterController> ();
+		cam = Camera.main.transform;
+		outlineMat = Resources.Load<Material> ("Materials/Outline");
 	}
 
 	#region HELPERS
 	void Crouch () 
 	{
 		var crouching = Input.GetKey (KeyCode.LeftShift);
-		var target = Vector3.up * (crouching ? 1.9f : 1f);
-		var lerp = Vector3.Lerp (me.center, target, Time.deltaTime * 10f);
-		var diff = lerp - me.center;
-		me.center = lerp;
+		var target = Vector3.up * (crouching ? 0.6f : 1.79f);
+		var lerp = Vector3.Lerp (cam.localPosition, target, Time.deltaTime * 5f);
+		cam.localPosition = lerp;
 
-		// Correct get up
-		transform.Translate (-diff);
 		// Modify speed
 		movSpeed = charSpeed * (crouching ? 0.35f : 1f);
 	}
-
 	void Movement () 
 	{
 		var x = Input.GetAxis ("Horizontal");
 		var z = Input.GetAxis ("Vertical");
-		var dir = transform.TransformDirection (new Vector3 (x, 0, z) * movSpeed);
+		var dir = transform.TransformDirection (new Vector3 (x, 0, z)) * movSpeed;
 		me.SimpleMove (dir);
 	}
-
 	void Rotation () 
 	{
 		// Rotate horizontally
@@ -81,46 +79,32 @@ public class Player : MonoBehaviour
 		if (angle >= maxAngle || angle <= -maxAngle)
 			cam.transform.localRotation = lastV;
 	}
-
-	void CollisionCheck () 
-	{
-		// Correct grab position
-		while (Physics.CheckSphere (grabPoint.position, 0.18f, ~ignoredByGrabbed))
-		{
-			grabPoint.Translate (0, 0, -Time.deltaTime);
-			if (grabPoint.localPosition.z <= 0.451f)
-			{
-				var loc = grabPoint.localPosition;
-				loc.z = 0.45f;
-				grabPoint.localPosition = loc;
-				return;
-			}
-		}
-
-		// Return to position if haven't collided
-		var lerp = Vector3.Lerp (grabPoint.localPosition, new Vector3 (0, -0.42f, 1.368f), Time.deltaTime * 2.5f);
-		var cachePos = grabPoint.position;
-		grabPoint.localPosition = lerp;
-		// Check returning won't make collide again
-		if (Physics.CheckSphere (grabPoint.position, 0.25f, ~ignoredByGrabbed))
-			grabPoint.position = cachePos;
-	}
-
 	void Raycasting () 
 	{
-		if (grabbedObject == null)
+		if (Grabbable.current == null)
 		{
+			// Find object to grab / interact
 			RaycastHit hit;
 			var ray = new Ray (cam.position, cam.forward);
 			if (Physics.Raycast (ray, out hit, 2f, ~ignoredByGrabbed))
 			{
+				// Is a grabbable object?
 				var grab = hit.collider.GetComponent<Grabbable> ();
 				if (grab == null) return;
-				if (Input.GetKey (KeyCode.Mouse0))
+				// -> DRAW SELECTABLE ICON
+				if (Input.GetKeyDown (KeyCode.Mouse0))
 				{
-					grabbedObject = grab;
+					Grabbable.current = grab;
 					grab.Grab ();
 				}
+			}
+		}
+		else
+		{
+			if (!Input.GetKey (KeyCode.Mouse0))
+			{
+				Grabbable.current.Drop ( me.velocity );
+				Grabbable.current = null;
 			}
 		}
 	}

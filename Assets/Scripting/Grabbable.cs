@@ -4,40 +4,74 @@ using UnityEngine;
 
 public class Grabbable : MonoBehaviour
 {
-	public Rigidbody body;
+	public static Grabbable current;	
+	Rigidbody body;
+	bool colliding;
+	bool grabbed;
 
-	public void Grab ()
+	public void Grab () 
 	{
-		// Disable collision to avoid breaking grab point
-		foreach (var c in GetComponents<Collider> ()) c.enabled = false;
 		// Make kinematic to avoid physic issues
+		foreach (var c in GetComponents<Collider> ()) c.isTrigger = true;
 		body.isKinematic = true;
-		StartCoroutine ("GoToGrabPoint");
+		StartCoroutine ("CarryObject");
+		// Discard any collision
+		colliding = false;
 	}
-
-	IEnumerator GoToGrabPoint () 
+	public void Drop ( Vector3 speed ) 
 	{
-		var p = FindObjectOfType<Player> ();
+		// Stop carrying object
+		grabbed = false;
+		transform.SetParent (null);
+		StopCoroutine ("CarryObject");
+		// Start applying physix again
+		foreach (var c in GetComponents<Collider> ()) c.isTrigger = false;
+		body.isKinematic = false;
+		body.velocity = speed;
+	}
+	IEnumerator CarryObject () 
+	{
+		// Smooth translate object to player
 		float time=0f;
-		while ( Vector3.Distance ( transform.position, p.grabPoint.position ) != 0 )
+		var p = Player.grabPoint;
+		while ( Vector3.Distance ( transform.position, p.position ) > 0 )
 		{
-			var lerp = Vector3.Lerp (transform.position, p.grabPoint.position, time );
+			if (!grabbed && time>0.2f) grabbed = true; 
+
+			var lerp = Vector3.Lerp (transform.position, p.position, time );
 			transform.position = lerp;
+
 			// Add time duration
-			time += Time.deltaTime / 0.18f;
+			time += Time.deltaTime * 4;
 			yield return null;
 		}
-		// When in place, set parenting
-		transform.SetParent (p.grabPoint);
-		grabbed = true;
+		transform.SetParent (Player.grabPoint);
 	}
 
-	bool grabbed;
-	private void Update() 
+	private void Update () 
 	{
-		if (!grabbed) return;
-
-		var lerp = Quaternion.Lerp (transform.rotation, Quaternion.identity, Time.deltaTime * 10f );
+		// Keep object un-rotated
+		if (current!=this) return;
+		var lerp = Quaternion.Lerp (transform.rotation, Quaternion.identity, Time.deltaTime * 2f);
 		transform.rotation = lerp;
+
+		// If collision, drop object
+		if (!grabbed) return;
+		if (colliding)
+		{
+			Drop ( -FindObjectOfType<Player> ().transform.forward );
+			current = null;
+			return;
+		}
+	}
+	private void OnTriggerEnter (Collider col) 
+	{
+		if (col.tag == "Player") return;
+		if (!grabbed) return;
+		colliding = true;
+	}
+	private void Awake () 
+	{
+		body = GetComponent<Rigidbody> ();
 	}
 }

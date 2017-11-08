@@ -1,46 +1,47 @@
-﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
-
-Shader "Custom/Liquid"
+﻿Shader "Custom/Liquid"
 {
 	Properties
 	{
-		_Y ("Y value", Float) = 3.0
 		_Color ("Color", Color) = (1,1,1,1)
-		_MainTex ("Albedo (RGB)", 2D) = "white" {}
-		_Glossiness ("Smoothness", Range(0,1)) = 0.5
-		_Metallic ("Metallic", Range(0,1)) = 0.0
+		_Level ("Fill height", Float) = 0.5
 	}
 
 	SubShader
 	{
-		Tags { "RenderType"="Opaque" }
-		LOD 200
+		Tags { "Queue"="Transparent+1" "RenderType"="Transparent" }
 		Cull Off
 
 		CGPROGRAM
-		#pragma surface surf Standard fullforwardshadows
-		#pragma target 3.0
-
+		#pragma surface surf Liquid fullforwardshadows vertex:vert
 		struct Input
 		{
-			fixed4 col : COLOR;
 			float3 worldPos;
+			float3 objectCenter;
 		};
 
-		float _Y;
-		half _Glossiness;
-		half _Metallic;
 		fixed4 _Color;
+		float _Level;
 
-		void surf (Input IN, inout SurfaceOutputStandard o)
+		void vert (inout appdata_full v, out Input o)
 		{
-			float value = (mul (unity_ObjectToWorld, float4(0, _Y, 0, 1))).y - IN.worldPos.y ; 
-			clip(value);
+			v.normal *= -1;
+            UNITY_INITIALIZE_OUTPUT (Input, o);
+			o.objectCenter = mul (unity_ObjectToWorld, float4 (0,0,0,1));
+		}
 
-			o.Albedo = _Color.rgb;
-			// Metallic and smoothness come from slider variables
-			o.Metallic = _Metallic;
-			o.Smoothness = _Glossiness;
+		void surf (Input IN, inout SurfaceOutput s)
+		{
+			float3 target = IN.objectCenter + float3(0, _Level, 0);
+			float value = target.y - IN.worldPos.y;
+
+			s.Albedo = _Color;
+			s.Alpha = value;
+		}
+
+		half4 LightingLiquid (SurfaceOutput s, float3 lightDir, float atten)
+		{
+			clip(s.Alpha);
+			return half4(s.Albedo, 1) * atten;
 		}
 		ENDCG
 	}
