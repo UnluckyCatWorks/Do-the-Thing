@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
 	float movSpeed;
 
 	public float rotSpeed;
-	public float maxAngle; 
+	public float maxAngle;
 	#endregion
 
 	private void Update () 
@@ -87,24 +87,73 @@ public class Player : MonoBehaviour
 			var ray = new Ray (cam.position, cam.forward);
 			if (Physics.Raycast (ray, out hit, 2f))
 			{
-				// Is a grabbable object?
-				var grab = hit.collider.GetComponent<Grabbable> ();
-				if (grab == null) return;
-				// -> DRAW SELECTABLE ICON
-				if (Input.GetKeyDown (KeyCode.Mouse0))
+				// Is a interactable object?
+				var obj = hit.collider.GetComponent<I_Interactable> ();
+				if (obj != null)
 				{
-					Grabbable.current = grab;
-					grab.Grab ();
+					if ( obj.CanInteract () )
+					{
+						ShowIcon ();
+						if (Input.GetKeyDown (KeyCode.Mouse0))
+						{
+							obj.Interact ();
+							HideIcon ();
+						}
+						return;
+					}
 				}
 			}
+			// In case anything fails
+			HideIcon ();
 		}
 		else
 		{
+			// Can't interact while holding an object
 			if (!Input.GetKey (KeyCode.Mouse0))
 			{
 				Grabbable.current.Drop ( me.velocity );
 				Grabbable.current = null;
 			}
+		}
+	}
+	#endregion
+
+	#region INTERACTING ICON
+	public SpriteRenderer icon;
+	bool iconIsIn;
+
+	void ShowIcon () 
+	{
+		if (iconIsIn) return;
+		else
+		{
+			StopCoroutine ("FadeIcon");
+			StartCoroutine (FadeIcon (0.6f));
+			iconIsIn = true;
+		}
+	}
+	void HideIcon () 
+	{
+		if (!iconIsIn) return;
+		else
+		{
+			StopCoroutine ("FadeIcon");
+			StartCoroutine (FadeIcon (0));
+			iconIsIn = false;
+		}
+	}
+	IEnumerator FadeIcon ( float target ) 
+	{
+		var time = 0f;
+		var start = icon.color.a;
+		while (icon.color.a < target)
+		{
+			var lerp = Mathf.Lerp (start, target, time);
+			icon.color = new Color (1, 1, 1, lerp);
+
+			// Add time duration
+			time += Time.deltaTime * 0.5f;
+			yield return null;
 		}
 	}
 	#endregion

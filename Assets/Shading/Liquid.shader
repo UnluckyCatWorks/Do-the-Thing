@@ -18,7 +18,7 @@ Shader "Custom/Liquid"
 		struct Input
 		{
 			float3 worldPos;
-			float3 objectCenter;
+			float3 worldCenter;
 		};
 
 		fixed4 _Color;
@@ -29,12 +29,12 @@ Shader "Custom/Liquid"
 			float3 viewDir = mul(unity_WorldToObject, _WorldSpaceCameraPos).xyz - v.vertex.xyz;
 			v.normal = viewDir;
             UNITY_INITIALIZE_OUTPUT (Input, o);
-			o.objectCenter = mul (unity_ObjectToWorld, float4 (0,0,0,1));
+			o.worldCenter = mul (unity_ObjectToWorld, float4(0,0,0, 1));
 		}
 
 		void surf (Input IN, inout SurfaceOutputStandard s)
 		{
-			float3 target = IN.objectCenter + float3(0, _Level, 0);
+			float3 target = IN.worldCenter + float3(0, _Level, 0);
 			float value = target.y - IN.worldPos.y;
 			clip(value);
 

@@ -10,9 +10,8 @@ public class LiquidControl : MonoBehaviour
 	public float fullHeight;            // Height at which vessel is full
 	public float emptyHeight;			// Height at which vessel is empty
 
-	public bool useMaterialInstance;
-	Material mat;
 	int _Level;
+	Material mat;
 
 	private void Update()
 	{
@@ -23,7 +22,6 @@ public class LiquidControl : MonoBehaviour
 	private void OnEnable () 
 	{
 		_Level = Shader.PropertyToID ("_Level");
-		if (useMaterialInstance) mat = GetComponent<Renderer> ().material;
-		else					 mat = GetComponent<Renderer> ().sharedMaterial;
+		mat = GetComponent<Renderer> ().sharedMaterial;
 	}
 }

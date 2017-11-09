@@ -1,8 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Grabbable : MonoBehaviour
+public class Grabbable : MonoBehaviour, I_Interactable
 {
 	public static Grabbable current;
 
@@ -11,8 +12,14 @@ public class Grabbable : MonoBehaviour
 	bool colliding;
 	bool grabbed;
 
-	public void Grab () 
+	public bool CanInteract () 
 	{
+		return current!=this;
+	}
+	public void Interact () 
+	{
+		// -> Grab object
+		current = this;
 		// Make kinematic to avoid physic issues
 		foreach (var c in GetComponents<Collider> ()) c.isTrigger = true;
 		body.isKinematic = true;
