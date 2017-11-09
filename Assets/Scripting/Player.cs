@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
 	public static Material outlineMat;
 	public static Transform grabPoint;
 
-	public LayerMask ignoredByGrabbed;
 	CharacterController me;
 	Transform cam;
 
@@ -86,7 +85,7 @@ public class Player : MonoBehaviour
 			// Find object to grab / interact
 			RaycastHit hit;
 			var ray = new Ray (cam.position, cam.forward);
-			if (Physics.Raycast (ray, out hit, 2f, ~ignoredByGrabbed))
+			if (Physics.Raycast (ray, out hit, 2f))
 			{
 				// Is a grabbable object?
 				var grab = hit.collider.GetComponent<Grabbable> ();

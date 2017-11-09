@@ -3,20 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Flags] enum Ingredients 
+[Flags]
+public enum Ingredients 
 {
-	Flor,
-	Jabon,
+	NONE,
+	Flower,
+	Soap,
 	Cactus,
-	Zumo_Uranio,
-	Baba_Caracol,
-	Peras_Cuanticas,
-	Anti_Materia,
-	Agua_Destilada,
-	Polen,
-	Pelo_Trump,
-	Sustancia_X,
-	Gas_Solido,
-	Purpurina,
-	Zanahoria
+	Uranium_Juice,
+	Quantic_Pears,
+	Anti_Matter,
+	Destiled_Water,
+	// Dispensadores
+	Substance_X,
+	Orange_Juice,
+	Unicorn_Blood,
+	Gnome_Sweat
 }

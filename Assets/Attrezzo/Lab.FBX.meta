@@ -63,6 +63,40 @@ ModelImporter:
     100110: Estanterias008
     100112: Line024
     100114: Pizarra
+    100116: Boton_Puerta
+    100118: Cajon
+    100120: Cajon2
+    100122: Cajon3
+    100124: Cajon4
+    100126: Caldero
+    100128: Dispensador
+    100130: Dispensador001
+    100132: Dispensador002
+    100134: Dispensador003
+    100136: Estanteria10
+    100138: Estanteria2
+    100140: Estanteria3
+    100142: Estanteria4
+    100144: Estanteria5
+    100146: Estanteria6
+    100148: Estanteria7
+    100150: Estanteria8
+    100152: Estanteria9
+    100154: Mesa_Principal
+    100156: Nevera
+    100158: Pasamanos
+    100160: Plane003
+    100162: Plataforma_Piso_superior
+    100164: Puente
+    100166: Puerta
+    100168: Puerta_nevera
+    100170: Ring_stand
+    100172: Sujeta_recipientes
+    100174: Tuberia 006
+    100176: Tuberias_dobles_con_cilindro
+    100178: Tuberias_Pared_pizarra
+    100180: viga_y_pared
+    100182: Vigas_piso_superior
     400000: Box001
     400002: Box002
     400004: Box003
@@ -121,6 +155,40 @@ ModelImporter:
     400110: Estanterias008
     400112: Line024
     400114: Pizarra
+    400116: Boton_Puerta
+    400118: Cajon
+    400120: Cajon2
+    400122: Cajon3
+    400124: Cajon4
+    400126: Caldero
+    400128: Dispensador
+    400130: Dispensador001
+    400132: Dispensador002
+    400134: Dispensador003
+    400136: Estanteria10
+    400138: Estanteria2
+    400140: Estanteria3
+    400142: Estanteria4
+    400144: Estanteria5
+    400146: Estanteria6
+    400148: Estanteria7
+    400150: Estanteria8
+    400152: Estanteria9
+    400154: Mesa_Principal
+    400156: Nevera
+    400158: Pasamanos
+    400160: Plane003
+    400162: Plataforma_Piso_superior
+    400164: Puente
+    400166: Puerta
+    400168: Puerta_nevera
+    400170: Ring_stand
+    400172: Sujeta_recipientes
+    400174: Tuberia 006
+    400176: Tuberias_dobles_con_cilindro
+    400178: Tuberias_Pared_pizarra
+    400180: viga_y_pared
+    400182: Vigas_piso_superior
     2300000: Box001
     2300002: Box002
     2300004: Box003
@@ -178,6 +246,39 @@ ModelImporter:
     2300108: Estanterias008
     2300110: Line024
     2300112: Pizarra
+    2300114: Boton_Puerta
+    2300116: Cajon
+    2300118: Cajon2
+    2300120: Cajon3
+    2300122: Cajon4
+    2300124: Caldero
+    2300126: Dispensador
+    2300128: Dispensador001
+    2300130: Dispensador002
+    2300132: Dispensador003
+    2300134: Estanteria10
+    2300136: Estanteria2
+    2300138: Estanteria3
+    2300140: Estanteria4
+    2300142: Estanteria5
+    2300144: Estanteria6
+    2300146: Estanteria7
+    2300148: Estanteria8
+    2300150: Estanteria9
+    2300152: Mesa_Principal
+    2300154: Nevera
+    2300156: Pasamanos
+    2300158: Plataforma_Piso_superior
+    2300160: Puente
+    2300162: Puerta
+    2300164: Puerta_nevera
+    2300166: Ring_stand
+    2300168: Sujeta_recipientes
+    2300170: Tuberia 006
+    2300172: Tuberias_dobles_con_cilindro
+    2300174: Tuberias_Pared_pizarra
+    2300176: viga_y_pared
+    2300178: Vigas_piso_superior
     3300000: Box001
     3300002: Box002
     3300004: Box003
@@ -235,6 +336,39 @@ ModelImporter:
     3300108: Estanterias008
     3300110: Line024
     3300112: Pizarra
+    3300114: Boton_Puerta
+    3300116: Cajon
+    3300118: Cajon2
+    3300120: Cajon3
+    3300122: Cajon4
+    3300124: Caldero
+    3300126: Dispensador
+    3300128: Dispensador001
+    3300130: Dispensador002
+    3300132: Dispensador003
+    3300134: Estanteria10
+    3300136: Estanteria2
+    3300138: Estanteria3
+    3300140: Estanteria4
+    3300142: Estanteria5
+    3300144: Estanteria6
+    3300146: Estanteria7
+    3300148: Estanteria8
+    3300150: Estanteria9
+    3300152: Mesa_Principal
+    3300154: Nevera
+    3300156: Pasamanos
+    3300158: Plataforma_Piso_superior
+    3300160: Puente
+    3300162: Puerta
+    3300164: Puerta_nevera
+    3300166: Ring_stand
+    3300168: Sujeta_recipientes
+    3300170: Tuberia 006
+    3300172: Tuberias_dobles_con_cilindro
+    3300174: Tuberias_Pared_pizarra
+    3300176: viga_y_pared
+    3300178: Vigas_piso_superior
     4300000: Box001
     4300002: Box002
     4300004: Box003
@@ -292,6 +426,39 @@ ModelImporter:
     4300108: Estanterias007
     4300110: Estanterias008
     4300112: Line024
+    4300114: Mesa_Principal
+    4300116: Plataforma_Piso_superior
+    4300118: viga_y_pared
+    4300120: Tuberias_dobles_con_cilindro
+    4300122: Dispensador
+    4300124: Tuberia 006
+    4300126: Estanteria10
+    4300128: Estanteria8
+    4300130: Estanteria7
+    4300132: Estanteria2
+    4300134: Estanteria3
+    4300136: Estanteria4
+    4300138: Estanteria5
+    4300140: Estanteria6
+    4300142: Vigas_piso_superior
+    4300144: Nevera
+    4300146: Puerta_nevera
+    4300148: Estanteria9
+    4300150: Tuberias_Pared_pizarra
+    4300152: Pasamanos
+    4300154: Puente
+    4300156: Puerta
+    4300158: Boton_Puerta
+    4300160: Ring_stand
+    4300162: Caldero
+    4300164: Cajon
+    4300166: Cajon3
+    4300168: Cajon4
+    4300170: Cajon2
+    4300172: Sujeta_recipientes
+    4300174: Dispensador001
+    4300176: Dispensador002
+    4300178: Dispensador003
     6400000: Box001
     6400002: Box002
     6400004: Box003
@@ -349,6 +516,39 @@ ModelImporter:
     6400108: Estanterias008
     6400110: Line024
     6400112: Pizarra
+    6400114: Boton_Puerta
+    6400116: Cajon
+    6400118: Cajon2
+    6400120: Cajon3
+    6400122: Cajon4
+    6400124: Caldero
+    6400126: Dispensador
+    6400128: Dispensador001
+    6400130: Dispensador002
+    6400132: Dispensador003
+    6400134: Estanteria10
+    6400136: Estanteria2
+    6400138: Estanteria3
+    6400140: Estanteria4
+    6400142: Estanteria5
+    6400144: Estanteria6
+    6400146: Estanteria7
+    6400148: Estanteria8
+    6400150: Estanteria9
+    6400152: Mesa_Principal
+    6400154: Nevera
+    6400156: Pasamanos
+    6400158: Plataforma_Piso_superior
+    6400160: Puente
+    6400162: Puerta
+    6400164: Puerta_nevera
+    6400166: Ring_stand
+    6400168: Sujeta_recipientes
+    6400170: Tuberia 006
+    6400172: Tuberias_dobles_con_cilindro
+    6400174: Tuberias_Pared_pizarra
+    6400176: viga_y_pared
+    6400178: Vigas_piso_superior
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -381,7 +581,7 @@ ModelImporter:
     addColliders: 1
     importBlendShapes: 0
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     optimizeMeshForGPU: 1
     keepQuads: 0
