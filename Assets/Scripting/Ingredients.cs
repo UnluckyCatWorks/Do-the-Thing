@@ -9,7 +9,7 @@ public enum Ingredients
 	NONE,
 	Flower,
 	Soap,
-	Cactus,
+	CACTUS_NO,
 	Uranium_Juice,
 	Quantic_Pears,
 	Anti_Matter,

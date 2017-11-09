@@ -13,11 +13,12 @@ Shader "Custom/Fluid Particles"
 		Cull Off
 		Lighting Off
 		Material { Emission [_EmisColor] }
+		ZWrite On
+		ZTest Less
 		ColorMaterial AmbientAndDiffuse
-		ZWrite Off
-		ColorMask RGB
 		Blend SrcAlpha OneMinusSrcAlpha
-		Pass {
+		Pass
+		{
 			SetTexture [_MainTex] { combine primary * texture }
 		}
 	}

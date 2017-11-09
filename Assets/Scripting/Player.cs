@@ -42,6 +42,8 @@ public class Player : MonoBehaviour
 		me = GetComponent<CharacterController> ();
 		cam = Camera.main.transform;
 		outlineMat = Resources.Load<Material> ("Materials/Outline");
+		// Disable capsule mesh
+		transform.GetChild (1).gameObject.SetActive (false);
 	}
 
 	#region HELPERS
@@ -127,8 +129,8 @@ public class Player : MonoBehaviour
 		if (iconIsIn) return;
 		else
 		{
-			StopCoroutine ("FadeIcon");
-			StartCoroutine (FadeIcon (0.6f));
+			StopCoroutine ("FadeOut");
+			StartCoroutine ("FadeIn");
 			iconIsIn = true;
 		}
 	}
@@ -137,22 +139,36 @@ public class Player : MonoBehaviour
 		if (!iconIsIn) return;
 		else
 		{
-			StopCoroutine ("FadeIcon");
-			StartCoroutine (FadeIcon (0));
+			StopCoroutine ("FadeIn");
+			StartCoroutine ("FadeOut");
 			iconIsIn = false;
 		}
 	}
-	IEnumerator FadeIcon ( float target ) 
+	IEnumerator FadeIn () 
 	{
 		var time = 0f;
 		var start = icon.color.a;
-		while (icon.color.a < target)
+		while (icon.color.a != 1)
 		{
-			var lerp = Mathf.Lerp (start, target, time);
+			var lerp = Mathf.Lerp (start, 1, time);
 			icon.color = new Color (1, 1, 1, lerp);
 
 			// Add time duration
-			time += Time.deltaTime * 0.5f;
+			time += Time.deltaTime * 1.5f;
+			yield return null;
+		}
+	}
+	IEnumerator FadeOut ()
+	{
+		var time = 0f;
+		var start = icon.color.a;
+		while (icon.color.a != 0)
+		{
+			var lerp = Mathf.Lerp (start, 0, time);
+			icon.color = new Color (1, 1, 1, lerp);
+
+			// Add time duration
+			time += Time.deltaTime * 1.5f;
 			yield return null;
 		}
 	}

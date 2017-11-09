@@ -25,7 +25,7 @@
 	
 	SubShader  
 	{
-		Tags { "Queue"="Transparent" "RenderType"="Transparent" }
+		Tags { "Queue"="Transparent-2" "RenderType"="Transparent" }
 
 		// This pass grabs the screen behind the object into a texture.
 		// We can access the result in the next pass as "_Background"

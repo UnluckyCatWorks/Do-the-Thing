@@ -18,10 +18,31 @@ public class LiquidControl : MonoBehaviour
 		var lerp = Mathf.Lerp (emptyHeight, fullHeight, fillLevel);
 		mat.SetFloat (_Level, lerp);
 	}
+	public IEnumerator FadeColor ( Color target ) 
+	{
+		var time = 0f;
+		var start = mat.color;
+		while (mat.color != target)
+		{
+			var lerp = Color.Lerp (start, target, time);
+			mat.color = lerp;
+
+			// Add time duration
+			time += Time.deltaTime * 2f;
+			yield return null;
+		}
+	}
 
 	private void OnEnable () 
 	{
 		_Level = Shader.PropertyToID ("_Level");
-		mat = GetComponent<Renderer> ().sharedMaterial;
+#if UNITY_EDITOR
+		if (UnityEditor.EditorApplication.isPlaying)
+			mat = GetComponent<Renderer> ().material;
+		else
+			mat = GetComponent<Renderer> ().sharedMaterial;
+#else
+		mat = GetComponent<Renderer> ().material;
+#endif
 	}
 }
