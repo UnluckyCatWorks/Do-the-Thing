@@ -8,15 +8,20 @@ ModelImporter:
     100000: //RootNode
     100002: Caldero_fusionar
     100004: Puerta_caldero_fusionar
+    100006: Plano_liquido_caldero_fusionar
     400000: //RootNode
     400002: Caldero_fusionar
     400004: Puerta_caldero_fusionar
+    400006: Plano_liquido_caldero_fusionar
     2300000: Caldero_fusionar
     2300002: Puerta_caldero_fusionar
+    2300004: Plano_liquido_caldero_fusionar
     3300000: Caldero_fusionar
     3300002: Puerta_caldero_fusionar
+    3300004: Plano_liquido_caldero_fusionar
     4300000: Caldero_fusionar
     4300002: Puerta_caldero_fusionar
+    4300004: Plano_liquido_caldero_fusionar
     9500000: //RootNode
   materials:
     importMaterials: 1
