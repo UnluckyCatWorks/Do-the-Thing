@@ -90,14 +90,33 @@ public class Player : MonoBehaviour
 		if (angle >= maxAngle || angle <= -maxAngle)
 			cam.transform.localRotation = lastV;
 	}
+
+	[HideInInspector]
+	public bool aimingGun;
+	public GameObject gun;
+	public ParticleSystem gunPs;
 	void Raycasting () 
 	{
+		if (aimingGun)
+		{
+			if (Input.GetKeyDown (KeyCode.Mouse0))
+			{
+				//-> Disparar
+				gunPs.Play ();
+			}
+			if (Input.GetKeyUp (KeyCode.Mouse0))
+			{
+				//-> Stop
+				gunPs.Stop ();
+			}
+		}
+
 		if (Grabbable.current == null)
 		{
 			// Find object to grab / interact
 			RaycastHit hit;
 			var ray = new Ray (cam.position, cam.forward);
-			if (Physics.Raycast (ray, out hit, 2f))
+			if (Physics.Raycast (ray, out hit, 2f)) 
 			{
 				// Is a interactable object?
 				var obj = hit.collider.GetComponent<I_Interactable> ();
@@ -118,7 +137,7 @@ public class Player : MonoBehaviour
 			// In case anything fails
 			HideIcon ();
 		}
-		else
+		else 
 		{
 			// Can't interact while holding an object
 			if (!Input.GetKey (KeyCode.Mouse0))
