@@ -10,7 +10,7 @@ Shader "Custom/Liquid"
 
 	SubShader
 	{
-		Tags { "Queue"="Transparent+1" "RenderType"="Transparent" }
+		Tags { "Queue"="Transparent+2" "RenderType"="Transparent" }
 		Cull Off
 
 		CGPROGRAM
@@ -26,8 +26,8 @@ Shader "Custom/Liquid"
 
 		void vert (inout appdata_full v, out Input o)
 		{
-			float3 viewDir = mul(unity_WorldToObject, _WorldSpaceCameraPos).xyz - v.vertex.xyz;
-			v.normal = viewDir;
+			float3 viewDir = mul(unity_WorldToObject, float4(_WorldSpaceCameraPos.xyz, 1)).xyz - v.vertex.xyz;
+			v.normal = normalize(viewDir);
             UNITY_INITIALIZE_OUTPUT (Input, o);
 			o.worldCenter = mul (unity_ObjectToWorld, float4(0,0,0, 1));
 		}

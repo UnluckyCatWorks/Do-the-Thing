@@ -61,7 +61,8 @@ public class Grabbable : MonoBehaviour, I_Interactable
 	{
 		// Keep object un-rotated
 		if (current!=this) return;
-		var lerp = Quaternion.Lerp (transform.rotation, Quaternion.identity, Time.deltaTime * 2f);
+		var lerp = Quaternion.Lerp (transform.rotation, Quaternion.identity, Time.deltaTime * 0.95f );
+		lerp.eulerAngles += new Vector3 (-3f * Time.deltaTime, 0, -10 * Time.deltaTime);
 		transform.rotation = lerp;
 
 		// If collision, drop object
