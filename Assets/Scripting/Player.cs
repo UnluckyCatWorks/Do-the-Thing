@@ -49,13 +49,23 @@ public class Player : MonoBehaviour
 	#region HELPERS
 	void Crouch () 
 	{
-		var crouching = Input.GetKey (KeyCode.LeftShift);
+		var crouching = Input.GetKey (KeyCode.LeftControl);
 		var target = Vector3.up * (crouching ? 0.6f : 1.79f);
 		var lerp = Vector3.Lerp (cam.localPosition, target, Time.deltaTime * 5f);
 		cam.localPosition = lerp;
 
 		// Modify speed
 		movSpeed = charSpeed * (crouching ? 0.35f : 1f);
+		if (Input.GetKey (KeyCode.LeftShift))
+		{
+			// Auto-drop when sprinting
+			movSpeed = charSpeed * 1.35f;
+			if (Grabbable.current!=null)
+			{
+				Grabbable.current.Drop ( me.velocity * 0.75f);
+				Grabbable.current = null;
+			}
+		}
 	}
 	void Movement () 
 	{

@@ -97,6 +97,44 @@ ModelImporter:
     100178: Tuberias_Pared_pizarra
     100180: viga_y_pared
     100182: Vigas_piso_superior
+    100184: Cajon009
+    100186: Cajon010
+    100188: Cajon011
+    100190: Cajon012
+    100192: Cajon013
+    100194: Cajon014
+    100196: Cajon015
+    100198: Cajon016
+    100200: Cajon017
+    100202: Cajon018
+    100204: Cajon019
+    100206: Cajon020
+    100208: Cajon021
+    100210: Cajon022
+    100212: Cajon023
+    100214: Cajon024
+    100216: Cajon1
+    100218: Cajon5
+    100220: Cajon6
+    100222: Cajon7
+    100224: Cajon8
+    100226: Caldero_fusionar
+    100228: Lava_manos
+    100230: Mesa_petita
+    100232: Mesa_petita001
+    100234: Mesa_petita002
+    100236: Mesa_petita003
+    100238: Mesa_petita004
+    100240: Puerta_caldero_fusionar
+    100242: Sala
+    100244: Temporizador
+    100246: Tuberia_2
+    100248: Tuberia_lateral
+    100250: Tuberia_solo
+    100252: Tubo_ventilacion_curvo
+    100254: Tubo_ventilacion_recto
+    100256: Tunel
+    100258: ArnoldLight001
     400000: Box001
     400002: Box002
     400004: Box003
@@ -189,6 +227,44 @@ ModelImporter:
     400178: Tuberias_Pared_pizarra
     400180: viga_y_pared
     400182: Vigas_piso_superior
+    400184: Cajon009
+    400186: Cajon010
+    400188: Cajon011
+    400190: Cajon012
+    400192: Cajon013
+    400194: Cajon014
+    400196: Cajon015
+    400198: Cajon016
+    400200: Cajon017
+    400202: Cajon018
+    400204: Cajon019
+    400206: Cajon020
+    400208: Cajon021
+    400210: Cajon022
+    400212: Cajon023
+    400214: Cajon024
+    400216: Cajon1
+    400218: Cajon5
+    400220: Cajon6
+    400222: Cajon7
+    400224: Cajon8
+    400226: Caldero_fusionar
+    400228: Lava_manos
+    400230: Mesa_petita
+    400232: Mesa_petita001
+    400234: Mesa_petita002
+    400236: Mesa_petita003
+    400238: Mesa_petita004
+    400240: Puerta_caldero_fusionar
+    400242: Sala
+    400244: Temporizador
+    400246: Tuberia_2
+    400248: Tuberia_lateral
+    400250: Tuberia_solo
+    400252: Tubo_ventilacion_curvo
+    400254: Tubo_ventilacion_recto
+    400256: Tunel
+    400258: ArnoldLight001
     2300000: Box001
     2300002: Box002
     2300004: Box003
@@ -279,6 +355,43 @@ ModelImporter:
     2300174: Tuberias_Pared_pizarra
     2300176: viga_y_pared
     2300178: Vigas_piso_superior
+    2300180: Cajon009
+    2300182: Cajon010
+    2300184: Cajon011
+    2300186: Cajon012
+    2300188: Cajon013
+    2300190: Cajon014
+    2300192: Cajon015
+    2300194: Cajon016
+    2300196: Cajon017
+    2300198: Cajon018
+    2300200: Cajon019
+    2300202: Cajon020
+    2300204: Cajon021
+    2300206: Cajon022
+    2300208: Cajon023
+    2300210: Cajon024
+    2300212: Cajon1
+    2300214: Cajon5
+    2300216: Cajon6
+    2300218: Cajon7
+    2300220: Cajon8
+    2300222: Caldero_fusionar
+    2300224: Lava_manos
+    2300226: Mesa_petita
+    2300228: Mesa_petita001
+    2300230: Mesa_petita002
+    2300232: Mesa_petita003
+    2300234: Mesa_petita004
+    2300236: Puerta_caldero_fusionar
+    2300238: Sala
+    2300240: Temporizador
+    2300242: Tuberia_2
+    2300244: Tuberia_lateral
+    2300246: Tuberia_solo
+    2300248: Tubo_ventilacion_curvo
+    2300250: Tubo_ventilacion_recto
+    2300252: Tunel
     3300000: Box001
     3300002: Box002
     3300004: Box003
@@ -369,6 +482,43 @@ ModelImporter:
     3300174: Tuberias_Pared_pizarra
     3300176: viga_y_pared
     3300178: Vigas_piso_superior
+    3300180: Cajon009
+    3300182: Cajon010
+    3300184: Cajon011
+    3300186: Cajon012
+    3300188: Cajon013
+    3300190: Cajon014
+    3300192: Cajon015
+    3300194: Cajon016
+    3300196: Cajon017
+    3300198: Cajon018
+    3300200: Cajon019
+    3300202: Cajon020
+    3300204: Cajon021
+    3300206: Cajon022
+    3300208: Cajon023
+    3300210: Cajon024
+    3300212: Cajon1
+    3300214: Cajon5
+    3300216: Cajon6
+    3300218: Cajon7
+    3300220: Cajon8
+    3300222: Caldero_fusionar
+    3300224: Lava_manos
+    3300226: Mesa_petita
+    3300228: Mesa_petita001
+    3300230: Mesa_petita002
+    3300232: Mesa_petita003
+    3300234: Mesa_petita004
+    3300236: Puerta_caldero_fusionar
+    3300238: Sala
+    3300240: Temporizador
+    3300242: Tuberia_2
+    3300244: Tuberia_lateral
+    3300246: Tuberia_solo
+    3300248: Tubo_ventilacion_curvo
+    3300250: Tubo_ventilacion_recto
+    3300252: Tunel
     4300000: Box001
     4300002: Box002
     4300004: Box003
@@ -459,6 +609,43 @@ ModelImporter:
     4300174: Dispensador001
     4300176: Dispensador002
     4300178: Dispensador003
+    4300180: Sala
+    4300182: Tuberia_lateral
+    4300184: Lava_manos
+    4300186: Tubo_ventilacion_recto
+    4300188: Tubo_ventilacion_curvo
+    4300190: Tuberia_2
+    4300192: Tuberia_solo
+    4300194: Tunel
+    4300196: Cajon1
+    4300198: Caldero_fusionar
+    4300200: Puerta_caldero_fusionar
+    4300202: Mesa_petita
+    4300204: Cajon6
+    4300206: Cajon8
+    4300208: Cajon5
+    4300210: Cajon7
+    4300212: Cajon009
+    4300214: Cajon010
+    4300216: Cajon011
+    4300218: Cajon012
+    4300220: Mesa_petita001
+    4300222: Cajon013
+    4300224: Cajon014
+    4300226: Cajon015
+    4300228: Cajon016
+    4300230: Mesa_petita002
+    4300232: Cajon017
+    4300234: Cajon018
+    4300236: Cajon019
+    4300238: Cajon020
+    4300240: Mesa_petita003
+    4300242: Cajon021
+    4300244: Cajon022
+    4300246: Cajon023
+    4300248: Cajon024
+    4300250: Mesa_petita004
+    4300252: Temporizador
     6400000: Box001
     6400002: Box002
     6400004: Box003
@@ -549,6 +736,43 @@ ModelImporter:
     6400174: Tuberias_Pared_pizarra
     6400176: viga_y_pared
     6400178: Vigas_piso_superior
+    6400180: Cajon009
+    6400182: Cajon010
+    6400184: Cajon011
+    6400186: Cajon012
+    6400188: Cajon013
+    6400190: Cajon014
+    6400192: Cajon015
+    6400194: Cajon016
+    6400196: Cajon017
+    6400198: Cajon018
+    6400200: Cajon019
+    6400202: Cajon020
+    6400204: Cajon021
+    6400206: Cajon022
+    6400208: Cajon023
+    6400210: Cajon024
+    6400212: Cajon1
+    6400214: Cajon5
+    6400216: Cajon6
+    6400218: Cajon7
+    6400220: Cajon8
+    6400222: Caldero_fusionar
+    6400224: Lava_manos
+    6400226: Mesa_petita
+    6400228: Mesa_petita001
+    6400230: Mesa_petita002
+    6400232: Mesa_petita003
+    6400234: Mesa_petita004
+    6400236: Puerta_caldero_fusionar
+    6400238: Sala
+    6400240: Temporizador
+    6400242: Tuberia_2
+    6400244: Tuberia_lateral
+    6400246: Tuberia_solo
+    6400248: Tubo_ventilacion_curvo
+    6400250: Tubo_ventilacion_recto
+    6400252: Tunel
     9500000: //RootNode
   materials:
     importMaterials: 1
