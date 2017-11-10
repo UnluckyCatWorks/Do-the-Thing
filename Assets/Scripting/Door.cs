@@ -9,10 +9,12 @@ public class Door : MonoBehaviour, I_Interactable
 {
 	public Text timer;
 	public Animator anim;
+	private int time=35;
 	public void Interact () 
 	{
-		min = 1;
-		sec = 0;
+		min = 0;
+		sec = time;
+		time -= 5;
 		anim.SetTrigger ("Pressed");
 	}
 	public bool CanInteract () 
@@ -22,7 +24,7 @@ public class Door : MonoBehaviour, I_Interactable
 	private void Awake () 
 	{
 		min = 0;
-		sec = 10;
+		sec = 11;
 		StartCoroutine ("CountDown");
 	}
 
@@ -43,7 +45,7 @@ public class Door : MonoBehaviour, I_Interactable
 		anim.SetTrigger ("DoorUp");
 		yield return new WaitForSeconds (0.5f);
 		FindObjectOfType<Enemy> ().active = true;
-		yield return new WaitForSeconds (1.5f);
+		yield return new WaitForSeconds (0.5f);
 		anim.SetTrigger ("DoorDown");
 	}
 	string BuildTime (int min, int sec) 

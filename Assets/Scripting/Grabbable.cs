@@ -18,6 +18,8 @@ public class Grabbable : MonoBehaviour, I_Interactable
 	}
 	public void Interact () 
 	{
+		if (name == "Caca")
+			UnityEngine.SceneManagement.SceneManager.LoadScene ("Menu");
 		// -> Grab object
 		current = this;
 		// Make kinematic to avoid physic issues

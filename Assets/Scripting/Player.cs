@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
 		if (Input.GetKey (KeyCode.LeftShift))
 		{
 			// Auto-drop when sprinting
-			movSpeed = charSpeed * 1.35f;
+			movSpeed = charSpeed * 1.85f;
 			if (Grabbable.current!=null)
 			{
 				Grabbable.current.Drop ( me.velocity * 0.75f);

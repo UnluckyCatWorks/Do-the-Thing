@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
@@ -23,14 +25,16 @@ public class Enemy : MonoBehaviour
 		Ingredients.Unicorn_Blood |
 		Ingredients.Uranium_Juice;
 
-
 	private void Update ()
 	{
 		if (!active) return;
 		ia.SetDestination (player.position);
-		if (Vector3.Distance ( player.position, transform.position ) < 0.5f)
+		if (Vector3.Distance ( player.position, transform.position ) < 2.1f)
 		{
-			// morir
+			// dying
+			SceneManager.LoadScene ("Menu");
+			Cursor.visible = true;
+			Cursor.lockState = CursorLockMode.None;
 		}
 	}
 
@@ -49,15 +53,15 @@ public class Enemy : MonoBehaviour
 			var r = Combinations.combination;
 			if ( r == unicornRecipe )
 			{
-				Instantiate (unicorn, transform.position + Vector3.up * 1.5f, Quaternion.identity);
+				Instantiate (unicorn, transform.position + Vector3.up * 1.5f, Quaternion.Euler(0,180,0));
 				Destroy (gameObject);
 			}
-			else
+			else if ((r & Ingredients.Cactus) == Ingredients.Cactus)
 			{
 				Instantiate (caca, transform.position + Vector3.up * 1.5f, Quaternion.identity);
 				Destroy (gameObject);
 			}
 		}
-		else vida -= 80 * Time.deltaTime;
+		else vida -= 95 * Time.deltaTime;
 	}
 }
