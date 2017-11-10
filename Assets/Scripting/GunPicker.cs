@@ -5,13 +5,14 @@ using UnityEngine;
 
 public class GunPicker : MonoBehaviour, I_Interactable
 {
-	public bool CanInteract()
+	public void Interact () 
 	{
-		throw new NotImplementedException ();
+		var p = FindObjectOfType<Player> ();
+		p.gun.SetActive (true);
+		p.aimingGun = true;
 	}
-
-	public void Interact()
+	public bool CanInteract () 
 	{
-		throw new NotImplementedException ();
+		return true;
 	}
 }
