@@ -6,17 +6,17 @@ using UnityEngine;
 [Flags]
 public enum Ingredients 
 {
-	NONE,
-	Flower,
-	Soap,
-	CACTUS_NO,
-	Uranium_Juice,
-	Quantic_Pears,
-	Anti_Matter,
-	Destiled_Water,
+	NONE=0,
+	Flower=2,
+	Soap=4,
+	Cactus=8,
+	Uranium_Juice=16,
+	Quantic_Pears=32,
+	Anti_Matter=64,
+	Destiled_Water=128,
 	// Dispensadores
-	Substance_X,
-	Orange_Juice,
-	Unicorn_Blood,
-	Gnome_Sweat
+	Substance_X=256,
+	Orange_Juice=512,
+	Unicorn_Blood=1024,
+	Gnome_Sweat=2048
 }
