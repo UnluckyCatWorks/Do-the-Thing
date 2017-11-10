@@ -1,27 +1,15 @@
 fileFormatVersion: 2
-guid: ca5c6572bd03fc6479369cbd55874717
-timeCreated: 1510255851
+guid: 996a23598f8ecfc4a9ef83a80788e32c
+timeCreated: 1510271606
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: Tuberia_2
-    100002: Tuberia_lateral
-    100004: //RootNode
-    100006: Tuberias_Pared_pizarra
-    400000: Tuberia_2
-    400002: Tuberia_lateral
-    400004: //RootNode
-    400006: Tuberias_Pared_pizarra
-    2300000: Tuberia_2
-    2300002: Tuberia_lateral
-    2300004: Tuberias_Pared_pizarra
-    3300000: Tuberia_2
-    3300002: Tuberia_lateral
-    3300004: Tuberias_Pared_pizarra
-    4300000: Tuberia_lateral
-    4300002: Tuberia_2
-    4300004: Tuberias_Pared_pizarra
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Escaleras
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -84,10 +72,10 @@ ModelImporter:
     rootMotionBoneName: 
     rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
