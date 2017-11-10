@@ -10,6 +10,7 @@ public class GunPicker : MonoBehaviour, I_Interactable
 		var p = FindObjectOfType<Player> ();
 		p.gun.SetActive (true);
 		p.aimingGun = true;
+		Destroy (gameObject);
 	}
 	public bool CanInteract () 
 	{

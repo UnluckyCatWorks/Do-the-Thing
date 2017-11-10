@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class Door : MonoBehaviour, I_Interactable
 {
@@ -10,8 +11,8 @@ public class Door : MonoBehaviour, I_Interactable
 	public Animator anim;
 	public void Interact () 
 	{
-		min = 0;
-		sec = 10;
+		min = 1;
+		sec = 0;
 		anim.SetTrigger ("Pressed");
 	}
 	public bool CanInteract () 
@@ -39,8 +40,11 @@ public class Door : MonoBehaviour, I_Interactable
 			}
 			timer.text = BuildTime (min, sec);
 		}
-		//-> Cuando se acabe el tiempo
 		anim.SetTrigger ("DoorUp");
+		yield return new WaitForSeconds (0.5f);
+		FindObjectOfType<Enemy> ().active = true;
+		yield return new WaitForSeconds (1.5f);
+		anim.SetTrigger ("DoorDown");
 	}
 	string BuildTime (int min, int sec) 
 	{
